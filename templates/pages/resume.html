@@ -1,0 +1,225 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Proyectos{% endblock %}
+
+{% block styles %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/custom.css' %}"> {% endcomment %}
+{% endblock %}
+
+{% block content %}
+
+    <!-- Resume Content-->
+        <div class="container px-5 my-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-11 col-xl-9 col-xxl-8">
+                    <!-- Experience Section-->
+                    <section>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h2 class="text-primary fw-bolder mb-0">Experience</h2>
+                            <!-- Download resume button-->
+                            <!-- Note: Set the link href target to a PDF file within your project-->
+                            <a class="btn btn-primary px-4 py-3" href="#!">
+                                <div class="d-inline-block bi bi-download me-2"></div>
+                                Download Resume
+                            </a>
+                        </div>
+                        <!-- Módulo 1 - Descripción General del Rol de Consultor de TI -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">2022 - 2023</div>
+                                            <div class="small fw-bolder">Consultor de TI</div>
+                                            <div class="small text-muted">Talent Advisor</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="small">
+                                            Soy un consultor de TI en Talent Advisor, donde desempeño un papel fundamental en el soporte a usuarios de la webapp y en el desarrollo de nuevos módulos dentro de la aplicación. Durante mi tiempo en Talent Advisor, he tenido la oportunidad de aplicar mis habilidades en desarrollo web y consultoría de TI para mejorar la experiencia de los usuarios y brindar soluciones efectivas a nuestros clientes.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Módulo 2 - Desarrollo del Módulo de Medición del Clima Laboral -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">2022 - 2023</div>
+                                            <div class="small fw-bolder">Desarrollo del Módulo de Medición del Clima Laboral</div>
+                                            <div class="small text-muted">Talent Advisor</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="small">
+                                            Una de mis contribuciones destacadas en Talent Advisor ha sido el desarrollo de un módulo para la medición del clima laboral en 
+                                            empresas. En este módulo, permito la carga de archivos CSV con información de usuarios a crear, así como información de las 
+                                            preguntas. Además, el módulo cuenta con la capacidad de realizar envíos masivos a los usuarios y garantiza la seguridad de las 
+                                            respuestas. Genera un enlace único para cada usuario, lo que facilita la relación de las preguntas con los encuestados. 
+                                            También incluye una sección que muestra gráficos sobre los resultados de la encuesta.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Módulo 3 - Desarrollo del Módulo de Encuestas Personalizadas -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">2022 - 2023</div>
+                                            <div class="small fw-bolder">Módulo de Encuestas Personalizadas</div>
+                                            <div class="small text-muted">Talent Advisor</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="small">
+                                            Otra de mis contribuciones destacadas en Talent Advisor ha sido el desarrollo de un módulo de encuestas personalizadas. 
+                                            Este módulo permite la creación de encuestas flexibles con ocho tipos de preguntas diferentes. Ofrece la capacidad de configurar 
+                                            la lógica de preguntas basada en respuestas anteriores y garantiza que las preguntas obligatorias se respondan. 
+                                            Además, incluye una función de autoguardado para permitir a los usuarios continuar donde lo dejaron, 
+                                            carga de invitados para encuestas empresariales y envío masivo para la recopilación eficiente de datos. 
+                                            El módulo también incluye una sección de informes para el análisis de resultados.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </section>
+                    <!-- Education Section-->
+                    <section>
+                        <h2 class="text-secondary fw-bolder mb-4">Educación</h2>
+                        <!-- Logro Educativo 1 - Ingeniería de Software -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2018 - 2024</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">Universidad Manuela Beltrán</div>
+                                                <div class="small text-muted">Ingeniería de Software</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            Aquí puedes agregar una descripción o detalles adicionales sobre tu logro en Ingeniería de Software en la Universidad Manuela Beltrán.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Logro Educativo 2 - Misión TIC 2022 - Desarrollo de Aplicaciones Web -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">MISIÓN TIC 2022</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">Universidad Tecnológica de Bolívar</div>
+                                                <div class="small text-muted">Desarrollo de Aplicaciones Web</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            Aquí puedes agregar una descripción o detalles adicionales sobre tu participación en la Misión TIC 2022 con profundización en Desarrollo de Aplicaciones Web en la Universidad Tecnológica de Bolívar.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Logro Educativo 3 - Google Cloud Computing Foundations -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">Google Cloud Computing Foundations</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">Google Cloud Skills Boost</div>
+                                                <div class="small text-muted">Issued Nov 2021</div>
+                                                <div class="small text-muted">Credential ID 1570588</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            Aquí puedes agregar detalles sobre tu logro en Google Cloud Computing Foundations, incluyendo la fecha de emisión y la identificación de la credencial.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- Divider-->
+                    <div class="pb-5"></div>
+                    <!-- Skills Section-->
+                    <section>
+                        <!-- Skillset Card-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <!-- Professional skills list-->
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="ri-tools-fill"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Habilidades Profesionales</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Comunicación</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Trabajo en Equipo</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Resolución de Problemas</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Rápido Aprendizaje</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Adaptabilidad al Cambio</div></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Languages list-->
+                                <div class="mb-0">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="ri-code-s-slash-fill"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Lenguajes Programación</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">PHP</div></div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    <!-- Resume Content-->
+        
+{% endblock %}
+
+{% block javascript %}
+    {% comment %} <script src="{% static 'js/custom.js' %}"></script> {% endcomment %}
+{% endblock %}
