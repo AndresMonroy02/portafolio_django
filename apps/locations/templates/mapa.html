@@ -1,0 +1,27 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Sitios de Interes{% endblock %}
+
+{% block styles %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/custom.css' %}"> {% endcomment %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h2>Mapa</h2>
+        {{ map|safe }}
+        <hr>
+        <ul>
+            {% for loc in locations %}
+                <li>{{ loc.name }} ({{ loc.address }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+    {% comment %} <script src="{% static 'js/custom.js' %}"></script> {% endcomment %}
+{% endblock %}

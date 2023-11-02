@@ -1,0 +1,49 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/custom.css' %}"> {% endcomment %}
+{% endblock %}
+
+{% block content %}
+    <!-- Page content-->
+    <section class="py-5">
+        <div class="container px-3 px-md-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center">Login</h2>
+                        </div>
+                        <div class="card-body"> 
+                            <form method="post" action="{% url 'login' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="username">Username:</label>
+                                    <input type="text" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>No tines una cuenta? <a href="{% url 'register' %}">Registrate aqui</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Page content-->
+{% endblock %}
+
+{% block javascript %}
+    {% comment %} <script src="{% static 'js/custom.js' %}"></script> {% endcomment %}
+{% endblock %}

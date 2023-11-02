@@ -22,11 +22,13 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/',  include('django.contrib.auth.urls')),
     path('', views.index, name='index'),
     path('resume/', views.resume, name='resume'),
     path('', include('apps.projects.urls')),
     path('', include('apps.contacts.urls')),
+    path('', include('apps.locations.urls')),
+    path('', include('apps.users.urls')),
 ]
 
-if settings.DEBUG:  # new
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

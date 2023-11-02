@@ -1,0 +1,72 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block styles %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/custom.css' %}"> {% endcomment %}
+{% endblock %}
+
+{% block content %}
+
+    {% if form_submitted == 1 %}
+        <div class="alert alert-primary" role="alert">
+            Mensaje enviado
+        </div>
+    {% endif %}
+
+    <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-3 px-md-5">
+                <!-- Contact form -->
+                <div class="bg-light rounded-4 py-4 px-4 px-md-5">
+                    <div class="text-center mb-4">
+                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="ri-mail-send-fill"></i></div>
+                        <h1 class="fw-bolder">Ponte en contacto</h1>
+                        <p class="lead fw-normal text-muted mb-0">¡Trabajemos juntos!</p>
+                    </div>
+                    <div class="row gx-3 gx-md-4 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <form id="contactForm" action="." method="post" id="contactForm">
+                                {% csrf_token %}
+                                <!-- Name input -->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Escribe tu nombre..." data-sb-validations="required" />
+                                    <label for="name">Nombre completo</label>
+                                    <div class="invalid-feedback" data-sb-feedback="nombre:required">El nombre es obligatorio.</div>
+                                </div>
+                                <!-- Email address input -->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="correo@ejemplo.com" data-sb-validations="required,email" />
+                                    <label for "email">Dirección de correo electrónico</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">El correo electrónico es obligatorio.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">El correo electrónico no es válido.</div>
+                                </div>
+                                <!-- Phone number input -->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="phone" name="phone" type="tel" placeholder="Escribe tu número de teléfono..." data-sb-validations="required" />
+                                    <label for="phone">Número de teléfono</label>
+                                    <div class="invalid-feedback" data-sb-feedback="telefono:required">El número de teléfono es obligatorio.</div>
+                                </div>
+                                <!-- Message input -->
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" name="message" type="text" placeholder="Escribe tu mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                    <label for="message">Mensaje</label>
+                                    <div class="invalid-feedback" data-sb-feedback="mensaje:required">El mensaje es obligatorio.</div>
+                                </div>
+                                <!-- Submit Button -->
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Page content-->
+{% endblock %}
+
+{% block javascript %}
+    {% comment %} <script src="{% static 'js/custom.js' %}"></script> {% endcomment %}
+{% endblock %}

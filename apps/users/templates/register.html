@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+    <!-- Page content-->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center">Register</h2>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" action="{% url 'register' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="username">Username:</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>Tienes una cuenta? <a href="{% url 'login' %}">Login aqui</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Page content-->
+{% endblock %}
+
+
+{% block javascript %}
+    <!-- Include any JavaScript scripts if needed -->
+{% endblock %}

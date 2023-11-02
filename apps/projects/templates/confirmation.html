@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Mensaje Confirmado{% endblock %}
+
+{% block styles %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/custom.css' %}"> {% endcomment %}
+{% endblock %}
+
+{% block content %}
+
+    <h1>Form Submission Successful</h1>
+    <p>Thank you for submitting the form. We have received your information.</p>
+
+{% endblock %}
+
+{% block javascript %}
+    {% comment %} <script src="{% static 'js/custom.js' %}"></script> {% endcomment %}
+{% endblock %}
