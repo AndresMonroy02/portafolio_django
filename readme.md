@@ -6,7 +6,7 @@ chmod 400 SoftwareSeguroKeys.pem
 
  
 ### Connect to the EC2 instance
-ssh -i "SoftwareSeguroKeys.pem" ubuntu@ec2-18-215-166-166.compute-1.amazonaws.com
+ssh -i "SoftwareSeguroKeys.pem" AWS_ID
 
 ### Install dependencies on the server
 sudo apt update
