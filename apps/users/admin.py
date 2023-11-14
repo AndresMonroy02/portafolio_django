@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import TrainVersion, TrainData
 
-# Register your models here.
+admin.site.register(TrainVersion)
+admin.site.register(TrainData)

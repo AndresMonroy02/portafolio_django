@@ -144,6 +144,9 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAUL_USE_TLS = True
 
+CLIENT_ID = os.environ.get('CLIENT_ID')
+CLIENT_SECRECT = os.environ.get('CLIENT_SECRECT')
+
 
 # LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'index'

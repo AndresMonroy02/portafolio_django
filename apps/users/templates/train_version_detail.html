@@ -1,0 +1,140 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Train Version Detail{% endblock %}
+
+{% block styles %}
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Page content-->
+    <section class="py-5">
+        <div class="container px-3 px-md-5">
+            <h2>Train Version Detail</h2>
+            <p>Custom Name: {{ train_version.custom_name }}</p>
+            <p>Version: {{ train_version.version }}</p>
+            <p>Created: {{ train_version.created }}</p>
+            <p>Last Update: {{ train_version.last_update }}</p>
+            <!-- Add more details as needed -->
+
+            <!-- Conditionally render buttons based on trained status -->
+            {% if not train_version.trained %}
+            <form id="trainForm" method="post">
+                {% csrf_token %}
+                <div class="form-group mt-3">
+                    <!-- Hidden input field to store train_version.id -->
+                    <input type="hidden" name="train_version_id" value="{{ train_version.id }}">
+                    
+                    <!-- Show train button if not trained -->
+                    <button type="submit" class="btn btn-success">Entrenar Modelo</button>
+                </div>
+            </form>
+            {% else %}
+                <!-- Add options or actions related to TrainVersion if trained -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary m-3" onclick="showUpdateForm()">Actualizar Base Conocimiento</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary m-3" onclick="showPredictionForm()">Predicción</button>
+                    </div>
+                </div>
+                
+
+                <!-- Update Form -->
+                <form id="updateForm" class="hidden  mt-3" method="post">
+                    {% csrf_token %}
+                    <!-- Add update form fields here -->
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Actualizar">
+                    </div>
+                </form>
+
+
+
+                <!-- Prediction Form -->
+                <form id="predictionForm" class="hidden mt-3" method="post">
+                    {% csrf_token %}
+                    <!-- Add prediction form fields here -->
+
+                    <div class="row">
+                        <!-- First Column -->
+                        <div class="col-md-6">
+                            <div class="form-group mt-2">
+                                <label for="x1">Importaciones Totales</label>
+                                <input type="number" step="0.01" class="form-control" name="x1" required>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label for="x2">Consumo Total</label>
+                                <input type="number" step="0.01" class="form-control" name="x2" required>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label for="x3">Consumo de Hogares</label>
+                                <input type="number" step="0.01" class="form-control" name="x3" required>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label for="x4">Consumo Final del Gobierno 2</label>
+                                <input type="number" step="0.01" class="form-control" name="x4" required>
+                            </div>
+                        </div>
+
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="form-group mt-2">
+                                <label for="x5">Formación bruta de capital</label>
+                                <input type="number" step="0.01" class="form-control" name="x5" required>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label for="x6">Formación Bruta de Capital Fijo</label>
+                                <input type="number" step="0.01" class="form-control" name="x6" required>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label for="x7">Demanda final interna</label>
+                                <input type="number" step="0.01" class="form-control" name="x7" required>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label for="x8">Exportaciones Totales</label>
+                                <input type="number" step="0.01" class="form-control" name="x8" required>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control hidden" name="versionId" value ="{{ train_version.id }}">
+
+                    <!-- Common Column -->
+                    <div class="alert alert-dark mt-2 hidden" role="alert" id = "predictionResult">
+                        
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <input type="submit" class="btn btn-warning" value="Hacer Predicción">
+                    </div>
+                </form>
+
+
+
+            {% endif %}
+        </div>
+    </section>
+    <!-- Page content-->
+
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/train_version_detail.js' %}"></script>
+    <script>
+        const trainURL = "{% url 'train_model' %}";
+        const predictionURL = "{% url 'prediction_model' %}";
+    </script>
+{% endblock %}

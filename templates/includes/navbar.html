@@ -12,6 +12,8 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contacto</a></li>                    
                     <li class="nav-item"><a class="nav-link" href="{% url 'locations' %}">Mapa</a></li>   
+                    <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Escritorio</a></li>
+
                     {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     {% else %}

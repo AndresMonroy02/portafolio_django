@@ -1,23 +1,85 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
-{% block title %}Contacto{% endblock %}
+{% block title %}Escritorio{% endblock %}
 
 {% block styles %}
-    {% comment %} <link rel="stylesheet" href="{% static 'css/custom.css' %}"> {% endcomment %}
+
 {% endblock %}
 
 {% block content %}
 
     <!-- Page content-->
-        <section class="py-5">
-            <div class="container px-3 px-md-5">
-                    logeado
-            </div>
-        </section>
+    <section class="py-5">
+        <div class="container px-3 px-md-5">
+            {% if user.is_authenticated %}
+                <h2>Logged In</h2>
+                <button id="newTrainDataModalButton" class="btn btn-primary">
+                    Add New TrainData
+                </button>
+                <ul class="list-group mt-3">
+                    {% for train_version in train_versions %}
+                        <li class="list-group-item">
+                            <a href="{% url 'train_version_detail' train_version_id=train_version.id %}">
+                                {{ train_version.custom_name }} - {{ train_version.version }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Please log in to view this content.</p>
+            {% endif %}
+        </div>
+    </section>
     <!-- Page content-->
+
+    <!-- New TrainData Modal -->
+<!-- New TrainData Modal -->
+<div class="modal fade" id="newTrainDataModal" tabindex="-1" role="dialog" aria-labelledby="newTrainDataModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newTrainDataModalLabel">Añadir Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your TrainData form fields here -->
+                <form id="newTrainDataForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- Add form fields here, for example: -->
+                    <div class="form-group">
+                        <label for="custom_name">Nombre Personalizado:</label>
+                        <input type="text" class="form-control" id="custom_name" name="custom_name" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="version">Version:</label>
+                        <input type="text" class="form-control" id="version" name="version" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="data">Data (CSV file):</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="data" name="data" accept=".csv" required>
+                            <label class="custom-file-label" for="data">Choose file</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Guardar Datos Modelo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}
 
 {% block javascript %}
-
+<script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/model_main.js' %}"></script>
+    <script>
+        const createTrainDataUrl = '{% url "create_train_data" %}';
+    </script>
 {% endblock %}
